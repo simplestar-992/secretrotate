@@ -1,74 +1,70 @@
-# SECRETROTATE
+# SecretRotate | Secrets Rotation Manager
 
-```
-💎 secretrotate 💎
-╔══════════════════╗
-║   SECRETROTATE       ║
-╚══════════════════╝
-```
-
-> A powerful tool built for modern developers
-
-## ✨ Features
-
-- 🚀 Blazing fast performance
-- 💎 Clean and intuitive API
-- 🔧 Zero configuration needed
-- 🛡️ Secure by default
-- 📦 Single binary, no dependencies
-
-## 📥 Installation
-
-```bash
-git clone https://github.com/simplestar-992/secretrotate.git
-cd secretrotate
-go build -o secretrotate .
-./secretrotate --help
-```
-
-## 🚀 Quick Start
-
-```bash
-./secretrotate -h
-```
-
-## 🧪 Examples
-
-```bash
-# Example 1
-./secretrotate status
-
-# Example 2  
-./secretrotate --verbose
-
-# Example 3
-./secretrotate help
-```
-
-## 📊 Project Info
-
-| Property | Value |
-|----------|-------|
-| Language | Go 🟢 |
-| Status | Active |
-| License | MIT |
-
-## 🤝 Contributing
-
-Contributions welcome! Open an issue or PR.
-
-## 📄 License
-
-MIT © **simplestar-992**
+<p align="center">
+  <img src="https://img.shields.io/badge/Security-Secrets%20Rotation-9B59B6?style=for-the-badge" alt=""/>
+  <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go" alt=""/>
+</p>
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/secretrotate-magenta-magenta?style=for-the-badge" alt=""/>
-  <img src="https://img.shields.io/github/v/tag/simplestar-992/secretrotate?style=for-the-badge" alt=""/>
-  <img src="https://img.shields.io/github/license/simplestar-992/secretrotate?style=for-the-badge" alt=""/>
-</p>
+### Automate your secrets rotation
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/simplestar-992">simplestar-992</a>
-</p>
+Rotate API keys, passwords, and tokens without downtime. SecretRotate handles the complexity of updating running services.
+
+```bash
+secretrotate rotate --service api-key --env production
+```
+
+---
+
+## How It Works
+
+1. Generate new secret
+2. Update secrets store (Vault, AWS, etc.)
+3. Roll out to services gradually
+4. Verify service health
+5. Revoke old secret
+
+---
+
+## Features
+
+- 🔄 **Automatic rotation** - Set it and forget it
+- 🔍 **Health checks** - Verify services after rotation
+- 📊 **Audit logging** - Track all secret changes
+- 🌐 **Multi-backend** - Vault, AWS Secrets, Azure Key Vault
+- ⏰ **Scheduled rotation** - Cron-based automation
+
+---
+
+## Usage
+
+```bash
+# Rotate a secret
+secretrotate rotate -s api-key -e prod
+
+# List secrets
+secretrotate list
+
+# View rotation status
+secretrotate status -s database-password
+
+# Configure rotation schedule
+secretrotate schedule -s api-key -every 30d
+```
+
+---
+
+## Supported Backends
+
+| Provider | Status |
+|----------|--------|
+| AWS Secrets Manager | ✅ |
+| HashiCorp Vault | ✅ |
+| Azure Key Vault | ✅ |
+| GCP Secret Manager | 🚧 |
+| Local encrypted store | ✅ |
+
+---
+
+MIT © 2024 [simplestar-992](https://github.com/simplestar-992)
